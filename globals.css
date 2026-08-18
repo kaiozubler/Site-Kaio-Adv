@@ -1,0 +1,109 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-silver: var(--silver);
+  --color-silver-foreground: var(--silver-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+
+  --font-sans: var(--font-sans), 'Inter Fallback', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif), 'Playfair Display Fallback', ui-serif, Georgia, serif;
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+:root {
+  color-scheme: dark;
+
+  --background: oklch(0.15 0 0);
+  --foreground: oklch(0.96 0 0);
+
+  --card: oklch(0.19 0 0);
+  --card-foreground: oklch(0.96 0 0);
+
+  --popover: oklch(0.19 0 0);
+  --popover-foreground: oklch(0.96 0 0);
+
+  --primary: oklch(0.96 0 0);
+  --primary-foreground: oklch(0.16 0 0);
+
+  --secondary: oklch(0.24 0 0);
+  --secondary-foreground: oklch(0.96 0 0);
+
+  --muted: oklch(0.22 0 0);
+  --muted-foreground: oklch(0.68 0 0);
+
+  --accent: oklch(0.24 0 0);
+  --accent-foreground: oklch(0.96 0 0);
+
+  --destructive: oklch(0.63 0.2 25);
+
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.78 0.06 85);
+
+  /* Prata */
+  --silver: oklch(0.82 0.005 260);
+  --silver-foreground: oklch(0.16 0 0);
+
+  /* Dourado dessaturado */
+  --gold: oklch(0.78 0.085 84);
+  --gold-foreground: oklch(0.16 0 0);
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Divisor fino em gradiente transparente -> prata/dourado -> transparente */
+  .divider-gradient {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      transparent,
+      color-mix(in oklch, var(--silver), transparent 45%),
+      color-mix(in oklch, var(--gold), transparent 55%),
+      transparent
+    );
+  }
+}
