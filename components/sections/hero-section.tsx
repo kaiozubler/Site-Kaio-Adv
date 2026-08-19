@@ -1,8 +1,9 @@
 import Image from 'next/image'
-import { MapPin, Scale } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 
 import { buttonVariants } from '@/components/ui/button'
 import { Reveal } from '@/components/reveal'
+import { JusticeScale } from '@/components/justice-scale'
 import { cn } from '@/lib/utils'
 
 export function HeroSection() {
@@ -18,6 +19,11 @@ export function HeroSection() {
               'radial-gradient(140% 120% at 74% 40%, oklch(0.42 0 0) 0%, oklch(0.34 0 0) 30%, oklch(0.26 0 0) 55%, oklch(0.18 0 0) 100%)',
           }}
         />
+        {/* Balança dourada decorativa — parcialmente encoberta pela foto */}
+        <JusticeScale
+          className="pointer-events-none absolute right-[33%] top-1/2 h-[300px] w-[242px] -translate-y-1/2 -rotate-[14deg] text-gold opacity-[0.22] md:right-[33%] md:h-[380px] md:w-[307px] lg:right-[33%] lg:h-[440px] lg:w-[355px]"
+        />
+
         <Image
           src="/images/kaio-zubler.png"
           alt="Dr. Kaio Zubler, advogado em direito médico e hospitalar"
@@ -49,13 +55,6 @@ export function HeroSection() {
 
       {/* Texto — sobreposto ao fundo, flutuando em relevo */}
       <div className="relative mx-auto flex min-h-[640px] max-w-6xl items-start px-6 pt-16 pb-20 md:min-h-[760px] md:pt-24 lg:min-h-[840px] lg:pt-28">
-        {/* Balança dourada decorativa atrás do texto */}
-        <Scale
-          aria-hidden
-          strokeWidth={0.75}
-          className="pointer-events-none absolute -left-16 top-1/2 h-[420px] w-[420px] -translate-y-1/2 -rotate-[18deg] text-gold opacity-40 md:h-[560px] md:w-[560px] lg:h-[640px] lg:w-[640px]"
-        />
-
         <div className="relative flex max-w-lg flex-col gap-6 [&_*]:[text-shadow:0_2px_28px_oklch(0_0_0/0.75)]">
           <Reveal>
             <span className="text-xs font-medium tracking-[0.25em] text-gold uppercase">
