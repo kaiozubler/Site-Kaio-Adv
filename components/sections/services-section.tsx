@@ -20,7 +20,7 @@ export function ServicesSection() {
             <Reveal key={service.title} delay={index * 0.05}>
               <article className="group flex h-full flex-col gap-4 bg-background p-8 transition-colors duration-300 hover:bg-card">
                 <span className="flex size-11 items-center justify-center rounded-lg border border-border text-silver transition-colors duration-300 group-hover:border-gold/60 group-hover:text-gold">
-                  <Icon className="size-5" />
+                  <Icon className="size-5 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110" />
                 </span>
                 <h3 className="font-serif text-xl leading-snug text-foreground">
                   {service.title}

@@ -1,8 +1,10 @@
+import Image from 'next/image'
 import { Mail, MapPin, Phone } from 'lucide-react'
 
 import { SectionHeading } from '@/components/ui/section-heading'
 import { Reveal } from '@/components/reveal'
 import { ContactForm } from '@/components/sections/contact-form'
+import { advogado } from '@/lib/site'
 
 const contactDetails = [
   {
@@ -34,8 +36,24 @@ export function ContactSection() {
               align="left"
               eyebrow="Contato"
               title="Conte o que está acontecendo"
-              description="Atendimento em todo o Brasil, com foco no Vale do Itajaí/SC. Conte brevemente o que está acontecendo e retornaremos com a orientação adequada."
+              description="Atendimento em todo o Brasil, com foco no Vale do Itajaí/SC. Conte brevemente o que está acontecendo e retornaremos o contato."
             />
+          </Reveal>
+
+          <Reveal delay={0.05}>
+            <div className="flex items-center gap-4 rounded-xl border border-border bg-card/30 p-4">
+              <Image
+                src="/images/kaio-zubler-close.jpg"
+                alt=""
+                width={64}
+                height={64}
+                className="size-16 rounded-full border border-gold/40 object-cover"
+              />
+              <div className="flex flex-col">
+                <span className="font-serif text-lg text-foreground">{advogado.nome}</span>
+                <span className="text-xs tracking-wide text-gold">{advogado.oab}</span>
+              </div>
+            </div>
           </Reveal>
 
           <Reveal delay={0.1}>

@@ -1,9 +1,10 @@
-import Image from 'next/image'
 import { MapPin } from 'lucide-react'
 
 import { buttonVariants } from '@/components/ui/button'
 import { Reveal } from '@/components/reveal'
 import { JusticeScale } from '@/components/justice-scale'
+import { HeroPhoto } from '@/components/hero-photo'
+import { advogado } from '@/lib/site'
 import { cn } from '@/lib/utils'
 
 export function HeroSection() {
@@ -24,14 +25,7 @@ export function HeroSection() {
           className="pointer-events-none absolute right-[33%] top-1/2 h-[300px] w-[242px] -translate-y-1/2 -rotate-[14deg] text-gold opacity-[0.22] md:right-[33%] md:h-[380px] md:w-[307px] lg:right-[33%] lg:h-[440px] lg:w-[355px]"
         />
 
-        <Image
-          src="/images/kaio-zubler.png"
-          alt="Dr. Kaio Zubler, advogado em direito médico e hospitalar"
-          width={1046}
-          height={1568}
-          priority
-          className="absolute inset-y-0 right-0 h-full w-auto object-contain object-right"
-        />
+        <HeroPhoto alt={`${advogado.nome}, advogado (${advogado.oab}), com atuação em direito médico e hospitalar`} />
         {/* Extensão do fundo do estúdio sobre a borda esquerda da foto */}
         <div
           aria-hidden
@@ -64,7 +58,7 @@ export function HeroSection() {
 
           <Reveal delay={0.05}>
             <h1 className="font-serif text-5xl leading-[1.05] text-balance text-foreground drop-shadow-2xl sm:text-6xl lg:text-7xl">
-              Kaio Zubler
+              {advogado.nome}
             </h1>
           </Reveal>
 
@@ -75,9 +69,8 @@ export function HeroSection() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-gold/50 bg-gold/5 px-4 py-1.5 text-xs tracking-wide text-gold backdrop-blur-sm">
-              OAB/SC nº 000.000
-              <span className="text-gold/60">(placeholder)</span>
+            <div className="shine inline-flex w-fit items-center gap-2 rounded-full border border-gold/50 bg-gold/5 px-4 py-1.5 text-xs tracking-wide text-gold backdrop-blur-sm">
+              {advogado.oab}
             </div>
           </Reveal>
 
@@ -98,7 +91,7 @@ export function HeroSection() {
                 href="#contato"
                 className={cn(buttonVariants({ variant: 'gold', size: 'lg' }), 'h-11 px-6 backdrop-blur-sm')}
               >
-                Fale com o advogado
+                Entrar em contato
               </a>
               <span className="inline-flex items-center gap-1.5 text-sm text-foreground/75">
                 <MapPin className="size-4 text-silver" />

@@ -1,20 +1,13 @@
-import Image from 'next/image'
 import { Reveal } from '@/components/reveal'
+import { AboutPortrait } from '@/components/about-portrait'
+import { advogado } from '@/lib/site'
 
 export function AboutSection() {
   return (
     <section id="sobre" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
       <div className="grid items-center gap-12 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
         <Reveal>
-          <div className="relative mx-auto w-full max-w-sm overflow-hidden rounded-2xl border border-border bg-card">
-            <Image
-              src="/images/kaio-zubler.png"
-              alt="Kaio Zubler, advogado"
-              width={1046}
-              height={1568}
-              className="h-auto w-full object-cover"
-            />
-          </div>
+          <AboutPortrait />
         </Reveal>
         <Reveal delay={0.1}>
           <div>
@@ -30,6 +23,9 @@ export function AboutSection() {
               <p className="font-serif text-2xl italic text-foreground">“Cuidando de quem cuida.”</p>
               <p className="mt-2 text-xs tracking-[0.18em] text-silver uppercase">Direito Médico, Hospitalar e Sanitário</p>
             </div>
+            <p className="mt-8 text-sm text-muted-foreground">
+              <span className="text-foreground">{advogado.nome}</span> · Advogado inscrito na {advogado.oab}
+            </p>
           </div>
         </Reveal>
       </div>

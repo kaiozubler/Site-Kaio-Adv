@@ -1,11 +1,12 @@
 import { Divider } from '@/components/divider'
+import { advogado } from '@/lib/site'
 
 const quickLinks = [
   { label: 'Início', href: '#topo' },
   { label: 'Atuação', href: '#servicos' },
   { label: 'Sobre', href: '#sobre' },
   { label: 'Contato', href: '#contato' },
-  { label: 'Blog', href: '#blog' },
+  { label: 'Política de privacidade', href: '/privacidade' },
 ]
 
 export function SiteFooter() {
@@ -23,7 +24,7 @@ export function SiteFooter() {
             Cuidando de quem cuida.
           </p>
           <span className="text-xs tracking-wide text-gold/80">
-            OAB/SC nº 000.000 (placeholder)
+            {advogado.nome} · {advogado.oab}
           </span>
         </div>
 
@@ -63,8 +64,13 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <p className="mt-12 text-xs text-muted-foreground">
-        © {year} Kaio Zubler. Todos os direitos reservados.
+      <p className="mt-12 max-w-3xl text-pretty text-xs leading-relaxed text-muted-foreground/80">
+        Conteúdo de caráter exclusivamente informativo, em conformidade com o Código de Ética e
+        Disciplina da OAB e o Provimento nº 205/2021 do Conselho Federal da OAB. As informações deste
+        site não constituem consulta jurídica, oferta de serviços ou promessa de resultado.
+      </p>
+      <p className="mt-4 text-xs text-muted-foreground">
+        © {year} {advogado.nome} · {advogado.oab}. Todos os direitos reservados.
       </p>
     </footer>
   )

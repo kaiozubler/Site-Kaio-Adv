@@ -17,7 +17,7 @@ export function SituationsSection() {
       <Reveal>
         <SectionHeading
           eyebrow="Quando procurar orientação"
-          title="Seu problema pode começar antes de um processo"
+          title="Situações em que a orientação jurídica pode ajudar"
           description="A orientação jurídica pode atuar tanto na prevenção quanto na resposta a situações que já exigem uma decisão."
         />
       </Reveal>
@@ -28,7 +28,7 @@ export function SituationsSection() {
             <Reveal key={item.title} delay={index * 0.04}>
               <article className="group flex h-full gap-4 rounded-xl border border-border bg-background p-6 transition-colors duration-300 hover:border-gold/40 hover:bg-card/50">
                 <span className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-border text-silver group-hover:border-gold/40 group-hover:text-gold">
-                  <Icon className="size-4" />
+                  <Icon className="size-4 transition-transform duration-500 group-hover:scale-110" />
                 </span>
                 <div>
                   <h3 className="font-serif text-lg leading-snug text-foreground">{item.title}</h3>

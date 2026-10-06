@@ -25,7 +25,7 @@ export function AudienceSection() {
           return (
             <Reveal key={item.title} delay={index * 0.05}>
               <article className="group h-full rounded-xl border border-border bg-card/30 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:bg-card/60">
-                <Icon className="mb-5 size-6 text-gold" />
+                <Icon className="mb-5 size-6 text-gold transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110" />
                 <h3 className="font-serif text-xl text-foreground">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
               </article>
