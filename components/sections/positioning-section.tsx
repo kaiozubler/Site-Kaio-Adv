@@ -23,8 +23,8 @@ export function PositioningSection() {
           const Icon = item.icon
           return (
             <Reveal key={item.title} delay={index * 0.06}>
-              <div className="border-t border-gold/40 pt-6">
-                <Icon className="size-5 text-gold" />
+              <div className="group relative border-t border-gold/20 pt-6"><span aria-hidden className="absolute -top-px left-0 h-px w-12 bg-gold transition-all duration-700 group-hover:w-full" />
+                <Icon className="size-5 text-gold transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:scale-110" />
                 <h3 className="mt-5 font-serif text-2xl text-foreground">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
               </div>

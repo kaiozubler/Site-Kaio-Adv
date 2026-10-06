@@ -35,7 +35,7 @@ export function ContactForm() {
         throw new Error(data?.error ?? 'Não foi possível enviar sua mensagem.')
       }
 
-      toast.success('Mensagem enviada com sucesso. Retornaremos em breve.')
+      toast.success('Mensagem enviada. O contato será retornado assim que possível.')
       reset()
     } catch (err) {
       toast.error(err instanceof Error ? err.message : 'Erro ao enviar. Tente novamente.')
@@ -125,6 +125,15 @@ export function ContactForm() {
           </>
         )}
       </Button>
+
+      <p className="text-pretty text-xs leading-relaxed text-muted-foreground">
+        Seus dados são usados apenas para retornar este contato e tratados com sigilo profissional,
+        conforme a LGPD. Veja a{' '}
+        <a href="/privacidade" className="text-gold underline-offset-4 hover:underline">
+          política de privacidade
+        </a>
+        .
+      </p>
     </form>
   )
 }
